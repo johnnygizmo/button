@@ -81,7 +81,8 @@ try:
                     GPIO.output(27, GPIO.LOW)
                     time.sleep(100)
                     GPIO.output(27, GPIO.HIGH)
-
+		    time.sleep(100)
+			
         if presses > 0 and time.time() - pressSession > 5:
             presses = 0
 
