@@ -14,7 +14,6 @@ headers = {
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(17, GPIO.OUT)
-GPIO.setup(27, GPIO.OUT)
 GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 r = requests.get("http://www.google.com")
@@ -78,10 +77,10 @@ try:
                     "POST", "https://maker.ifttt.com/trigger/button_triple/with/key/dhh2AN6ZYlKW4o6Bl6ImY0", data=hook, headers=headers)
 
                 for i in range(20):
-                    GPIO.output(27, GPIO.LOW)
-                    time.sleep(100)
-                    GPIO.output(27, GPIO.HIGH)
-		    time.sleep(100)
+                    GPIO.output(17, GPIO.LOW)
+                    time.sleep(0.5)
+                    GPIO.output(17, GPIO.HIGH)
+		    time.sleep(0.5)
 			
         if presses > 0 and time.time() - pressSession > 5:
             presses = 0
